@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 import Player from ".";
 
 test("renders player information and two buttons", () => {
-  render(<Player name="Jan" score="5" />);
+  render(<Player name="Jan" score={5} />);
 
   const player = screen.getByText("Jan");
   expect(player).toBeInTheDocument();
@@ -24,7 +24,7 @@ test("calls callbacks when increasing or decreasing score", async () => {
   render(
     <Player
       name="Jan"
-      score="5"
+      score={5}
       onDecreasePlayerScore={decrease}
       onIncreasePlayerScore={increase}
     />
